@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package nobbb;
+
+service CounterService {
+  rpc GetCounterValue (CounterRequest) returns (CounterResponse) {}
+  rpc IncrementCounter (CounterRequest) returns (CounterResponse) {}
+  rpc AddToCounter (CounterRequest) returns (CounterResponse) {}
+  rpc ClearCounter (CounterRequest) returns (CounterResponse) {}
+}
+
+message CounterRequest {
+  string numericalInput = 1;
+}
+
+message CounterResponse {
+  int32 currentValue = 1;
+}
+
